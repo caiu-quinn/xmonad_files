@@ -1,0 +1,27 @@
+Config {
+    font = "-misc-fixed-*-*-*-*-13-*-*-*-*-*-*-*",
+    bgColor = "black",
+    fgColor = "grey",
+    position = TopW L 90,
+    commands = [
+        Run Network "wlan0" ["-L","0","-H","32","--normal",
+            "green","--high","red","-t","<rx>|<tx>"] 10,
+        Run Wireless "wlan0" ["-t","<essid>"] 10,
+        Run Cpu ["-L","15","-H","50","--normal","green","--high","red"] 10,
+        Run Memory ["-t","Mem: <usedratio>%"] 10,
+        Run Swap [] 10,
+        Run Date "<fc=#ee9a00>%a %b %_d %Y %H:%M:%S</fc>" "date" 10,
+        Run StdinReader,
+        Run BatteryP ["BAT0"] [
+            "-t", "<acstatus> <left>%",
+            "-L", "10", "-H", "80",
+            "-l", "red", "-h", "green",
+            "--", "-O", "Charge:", "-o", "Batt:"
+        ]
+        50,
+        Run Kbd [("fr(bepo)", "BÉPO"), ("fr", "AZERTY")]
+    ],
+    sepChar = "%",
+    alignSep = "}{",
+    template = "%StdinReader% }{ %battery% | %cpu% | %memory% * %swap% | %wlan0wi%: %wlan0% | %kbd% | %date%"
+}

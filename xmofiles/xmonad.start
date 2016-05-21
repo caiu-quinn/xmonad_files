@@ -1,0 +1,16 @@
+#!/bin/bash
+
+xrdb -merge .Xresources
+
+setxkbmap fr bepo
+
+trayer --edge top --align right --SetDockType true --SetPartialStrut true \
+    --expand true --width 10 --height 15 --transparent true --tint 0x000000 &
+
+if [ -x /usr/bin/nm-applet ] ; then
+    nm-applet --sm-disable &
+fi
+
+feh --bg-scale .wallpaper.jpg
+
+exec xmonad

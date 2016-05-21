@@ -1,0 +1,9 @@
+Xft.dpi:        96
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.hintstyle:  hintslight
+XTerm*background: black
+XTerm*foreground: white
+XTerm*bellIsUrgent:  true
+XTerm*metaSendsEscape: true
