@@ -1,0 +1,12 @@
+Pour installer xmonad :
+
+sudo apt-get install xmonad xmobar trayer suckless-tools feh
+sudo mv Xresources /home/caiu/.Xresources
+sudo mv xmonad.start /usr/local/bin/
+sudo mkdir /home/caiu/.xmonad
+sudo mv xmonad.hs /home/caiu/.xmonad/
+sudo mv xmobarrc /home/caiu/.xmobarrc
+sudo chmod +x /usr/local/bin/xmonad.start
+sudo chmod 755 /usr/local/bin/xmonad.start
+sudo nano /usr/share/xsessions/xmonad.desktop
+(Écrire « xmonad.start » juste après « Exec= »)
